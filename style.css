@@ -1,87 +1,525 @@
-/* style.css */
+@font-face {
+    font-family: 'BitHigh';
+    src: url('/static/bithigh.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* Font setup */
+@font-face {
+    font-family: 'Bitcell';
+    src: url('/static/bitcell_memesbruh03.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0d1b2a;
-  color: #fefae0;
-  line-height: 1.6;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: url('/static/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Bitcell", serif;
+    text-shadow: 2px 2px 0px black;
+    color: #3b2f2f;
+    padding: 2rem;
 }
 
-h1, h2 {
-  font-family: 'Cinzel Decorative', serif;
-  color: #80ffdb;
-  margin-top: 0;
+html {
+    height: 92%;
 }
+
+body {
+    overflow-y: auto;
+    height: 90%;
+
+    align-items: center;
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/container_background.png') 5 fill stretch;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bitcell', serif;
+    color: #CFCFCF;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: large;
+}
+
+h3 {}
 
 a {
-  color: #5e60ce;
-  text-decoration: none;
+    font-family: 'Bitcell', serif;
+    color: #CFCFCF;
+    font-size: x-large;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
-header {
-  background: linear-gradient(to right, #1b263b, #0d1b2a);
-  padding: 2rem 1rem;
-  border-bottom: 2px solid #5e60ce;
+form {
+    border: 5px solid transparent;
+    border-image: url('/static/block_background.png') 5 fill stretch;
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
 }
 
-.tagline {
-  font-style: italic;
-  color: #bde0fe;
-  margin-top: -0.5rem;
+.form-field.full-width {
+    flex: 0 0 97%;
 }
 
-nav {
-  margin-top: 1rem;
+.form-field.half-width {
+    flex: 0 0 46.483%;
+    /* Leaves some room for gap */
 }
 
-nav a {
-  margin: 0 0.8rem;
-  font-weight: bold;
-  color: #80ffdb;
+.form-field.third-width {
+    flex: 0 0 29.73%;
+}
+
+
+.form-field {
+    display: block;
+    align-items: center;
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/container_background.png') 5 fill stretch;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    background: #fdfaf6;
+    border: 1px solid #b08d57;
+    border-radius: 6px;
+    color: #CFCFCF;
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    border-image: url('/static/block_background.png') 5 fill stretch;
+}
+
+.list-item input[type="text"]:hover,
+.list-item input[type="number"]:hover,
+textarea:hover {
+    background-color: #c3b1d1ce;
+    border-color: #404aa5;
+    cursor: text;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #c2a26c;
+    background-color: #f9f1e7;
+}
+
+::placeholder {
+    color: #c3b1d1ce;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+}
+
+.reference-field {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reference-popup {
+    border: 5px solid transparent;
+    border-image: url('/static/container_background.png') 5 fill stretch;
+    position: 'fixed';
+    top: '20%';
+    left: '50%';
+    transform: 'translateX(-50%)';
+    padding: '1rem';
+    border: '1px solid black';
+    zIndex: 10000;
+}
+
+select {
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
+    background-color: #1F1B23;
+    border: 1px solid #5C3B1B;
+    border-radius: 6px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-image: url('/static/block_background.png') 5 fill stretch;
+}
+
+/* These affect the dropdown text, not the visible box */
+option {
+    background-color: #2D1E28;
+    color: #CFCFCF;
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    padding: 0.5rem;
+}
+
+option:hover {
+    background-color: #30202a;
+    background-color: #5C3B1B;
+}
+
+/* Optional: smoother UX feedback */
+select:hover {
+    background-color: #30202a;
+    background-color: #5C3B1B;
+}
+
+select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+button {
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/container_background.png') 5 fill stretch;
+    color: #f3e7d8;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: 2px solid #5c3b1c;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 36px;
+
+    margin: 5px;
+    margin-right: 15px;
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
+    background-color: #1F1B23;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #a57239, #814d24);
+    background: linear-gradient(to bottom, #5C3B1B, #5C3B1B);
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    color: #B22222;
+    position: relative;
+    float: right;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
+    font-size: large;
 }
 
 .section {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid #5e60ce;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #5e60ce33;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed #8b5c2e;
+
+    align-items: center;
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/block_background.png') 5 fill stretch;
 }
 
-.button {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: #5e60ce;
-  color: #0d1b2a;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+.entry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 
-.button:hover {
-  background-color: #80ffdb;
-  color: #000;
+.entry-card {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/block_background.png') 5 fill stretch;
+    padding: 0rem 0rem 0rem 0rem;
+    margin-bottom: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+    width: 100%;
+
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid #5e60ce;
-  font-size: 0.9rem;
-  color: #adb5bd;
+.entry-card:hover {
+    background-color: #ffffff;
+    opacity: 0.7 !important;
+    filter: alpha(opacity=10) !important;
+    /* For IE8 and earlier */
+    transform: scale(1.0125);
+}
+
+.entry-image {
+    margin: 1rem;
+}
+
+.entry-image img {
+    border-radius: 6px;
+    background: #d7c4a3;
+    border: 1px solid #a1866f;
+}
+
+.entry-info a {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+.entry-info {
+    width: 100%;
+    height: 100%;
+}
+
+.entry-info h1 {
+    text-align: left;
+}
+
+.entry-card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 95%;
+}
+
+.entry-card-link:hover .entry-card {
+    background-color: #ffffff;
+    opacity: 0.7 !important;
+    transform: scale(1.0125);
+}
+
+.entry-meta {
+    font-family: 'Bitcell', serif;
+    color: #CFCFCF;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+    width: 100%;
+    column-count: unset;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    /* Vertically align items */
+    width: 50%;
+    padding: 1rem;
+    /* Optional: add spacing inside */
+    box-sizing: border-box;
+    /* Ensure padding doesn't overflow the width */
+}
+
+.list-item input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    /* Prevents overflow from long strings */
+}
+
+.reference-list-item {
+    display: flex;
+    align-items: center;
+    /* Vertically align items */
+    width: 50%;
+    padding: 1rem;
+    /* Optional: add spacing inside */
+    box-sizing: border-box;
+    /* Ensure padding doesn't overflow the width */
+}
+
+.reference-list-item input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    /* Prevents overflow from long strings */
+}
+
+.reference-list-item .delete-btn {
+    color: #B22222;
+    margin-left: 1rem;
+}
+
+.list-item .delete-btn {
+    color: #B22222;
+    margin-left: 1rem;
+}
+
+.reference-list-item .delete-btn:hover {
+    color: #CFCFCF !important;
+    text-decoration: underline solid;
+    cursor: default;
+}
+
+.list-item .delete-btn:hover {
+    color: #CFCFCF !important;
+    text-decoration: underline solid;
+    cursor: default;
+}
+
+label {
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    color: #CFCFCF;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
+    text-align: center;
+    text-decoration: none;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    padding: 2rem;
+
+    background: none;
+    border: 5px solid transparent;
+    border-image: url('/static/container_background.png') 5 fill stretch;
+
+    box-shadow: 0 0 25px rgba(91, 60, 27, 0.6);
+    border-radius: 12px;
+    z-index: 9999;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #5C3B1B;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f077';
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type=number] {
+    width: 100%;
+    padding: 0.4rem;
+    background: #fdfaf6;
+    border: 1px solid #b08d57;
+    border-radius: 6px;
+    color: #CFCFCF;
+    font-family: 'Bitcell', serif;
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 0px black;
+    border-image: url('/static/block_background.png') 5 fill stretch;
+}
+
+.minus {
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+.plus {
+    padding: 5px;
+    font-size: 1.1rem;
 }
