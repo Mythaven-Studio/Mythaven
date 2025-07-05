@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'BitHigh';
-    src: url('/static/bithigh.ttf') format('truetype');
+    src: url('/Mythaven/static/bithigh.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Bitcell';
-    src: url('/static/bitcell_memesbruh03.ttf') format('truetype');
+    src: url('/Mythaven/static/bitcell_memesbruh03.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,7 +19,7 @@ body {
     padding: 0;
     overflow-y: hidden;
     overflow-x: hidden;
-    background: url('/static/background.png');
+    background: url('/Mythaven/static/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Bitcell", serif;
@@ -39,7 +39,7 @@ body {
     align-items: center;
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/container_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/container_background.png') 5 fill stretch;
 }
 
 h1,
@@ -81,7 +81,7 @@ a:hover {
 
 form {
     border: 5px solid transparent;
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
     padding: 1rem 1rem;
     margin-bottom: 2rem;
 }
@@ -111,7 +111,7 @@ form {
     align-items: center;
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/container_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/container_background.png') 5 fill stretch;
     padding: 0 0.5rem 0.5rem 0.5rem;
 
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
@@ -134,7 +134,7 @@ select {
     font-family: 'Bitcell', serif;
     font-size: 1.25rem;
     text-shadow: 2px 2px 0px black;
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
 }
 
 .list-item input[type="text"]:hover,
@@ -167,7 +167,7 @@ select:focus {
 
 .reference-popup {
     border: 5px solid transparent;
-    border-image: url('/static/container_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/container_background.png') 5 fill stretch;
     position: 'fixed';
     top: '20%';
     left: '50%';
@@ -187,7 +187,7 @@ select {
     border-radius: 6px;
     padding: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
 }
 
 /* These affect the dropdown text, not the visible box */
@@ -220,7 +220,7 @@ select:disabled {
 button {
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/container_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/container_background.png') 5 fill stretch;
     color: #f3e7d8;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     border: 2px solid #5c3b1c;
@@ -280,7 +280,7 @@ p {
     align-items: center;
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
 }
 
 .entry-list {
@@ -297,7 +297,7 @@ p {
     align-items: center;
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
     padding: 0rem 0rem 0rem 0rem;
     margin-bottom: 1rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
@@ -444,7 +444,7 @@ label {
 
     background: none;
     border: 5px solid transparent;
-    border-image: url('/static/container_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/container_background.png') 5 fill stretch;
 
     box-shadow: 0 0 25px rgba(91, 60, 27, 0.6);
     border-radius: 12px;
@@ -511,7 +511,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: 'Bitcell', serif;
     font-size: 1.25rem;
     text-shadow: 2px 2px 0px black;
-    border-image: url('/static/block_background.png') 5 fill stretch;
+    border-image: url('/Mythaven/static/block_background.png') 5 fill stretch;
 }
 
 .minus {
